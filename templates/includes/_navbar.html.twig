@@ -1,0 +1,52 @@
+<div class="container-fluid d-flex">
+	<div>
+		<figure>
+			{# <img id="logo" src="assets/images/tux-100.svg" alt="logo du site" title="linux-tux"/> #}
+			<img id="logo" src="{{ asset("assets/images/tux-100.svg") }}" alt="logo du site" title="linux-tux"/>
+		</figure>
+	</div>
+	<div></div>
+	<h1 id="titreSite">Petites Annonces</h1>
+	<button id="hamburger-button">&#9776;</button>
+</div>
+
+
+<div id="hamburger">
+	<div id="hamburger-content">
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-xl navbar-dark bg-info">
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
+						</li>
+
+						{% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
+
+							<li class="nav-item">
+								<a class="nav-link active" href="{{ path('app_logout') }}">Logout</a>
+							</li>
+
+						{% elseif is_granted('ROLE_ADMIN') %}
+
+							<li class="nav-item">
+								<a class="nav-link active" href="{{ path('app_logout') }}">Logout</a>
+							</li>
+
+
+						{% else %}
+
+							<li class="nav-item">
+								<a class="nav-link active" href="{{ path('app_login') }}">Connexion</a>
+							</li>
+
+						{% endif %}
+					</li>
+				</ul>
+			</li>
+		</div>
+	</li>
+</div></nav></div><div id="hamburger-sidebar"><div id="hamburger-sidebar-header"></div><div id="hamburger-sidebar-body"></div></div><div id="hamburger-overlay"></div></div></div></div>
